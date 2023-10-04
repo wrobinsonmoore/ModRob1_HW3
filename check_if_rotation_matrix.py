@@ -6,7 +6,7 @@ This file was used to answer Question 4!
 import numpy as np
 
 # The user defines their 3X3 matrix here!
-matrix = np.array([[1, 0, 0], [0, 1, 1], [0, 0, 1]])
+matrix = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
 
 # Define the tolerance for the check
 tolerance = 1e-5
@@ -23,14 +23,14 @@ transpose = matrix.T
 print(f"\nThe given matrix is =\n {matrix}")
 
 # IF the two conditions are met, then it IS a rotation matrix!
-if (((det >= 1-tolerance and det <= 1 + tolerance) or (det >= -1-tolerance and det <= -1 + tolerance)) and
+if (((det >= 1-tolerance and det <= 1 + tolerance)) and
     (np.allclose(inv, transpose, tolerance))): 
     print("\nThis IS a rotation matrix!\n")
 
 # If they are not met, let the user know AND tell them specifically which constraint(s) was not met!
 else:
     print("\nThis is NOT a rotation matrix!")
-    if not ((det >= 1-tolerance and det <= 1 + tolerance) or (det >= -1-tolerance and det <= -1 + tolerance)):
+    if not ((det >= 1-tolerance and det <= 1 + tolerance)):
         print("The orientation-preserving constraint was not met!")
     if not (np.allclose(inv, transpose, tolerance)):
         print("The orthogonality constraint was not met!")
