@@ -12,7 +12,7 @@ matrix = np.array([[1, 0, 0], [0, 1, 0], [0, 0, 1]])
 tolerance = 1e-5
 
 # The two conditions for a rotation matrix are:
-# 1. The determinant of the matrix must be 1 or -1 (with a tolerance in this case). This is the orientation-preserving constraint!
+# 1. The determinant of the matrix must be 1 (with a tolerance in this case). This is the orientation-preserving constraint!
 # 2. Its transpose must be equal to its inverse (with the given tolerance in this case). This is the orthogonality constraint!
 # Obtain the determinant, inverse, and tranpose of the matrix. 
 det = np.linalg.det(matrix)
